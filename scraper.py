@@ -6,9 +6,18 @@ import utils as ut
 
 class YahooFinanceScraper:
     """
-    Web Scraper for Yahoo Finance.
-    """
+    A class for scraping data from various finance-related web pages on Yahoo Finance.
 
+    Methods:
+    - __init__: Initializes the Scraper class with default headers for requests.
+    - get_exchange_rate: Gets the exchange rate from one currency to another.
+    - perform_exchange: Performs an exchange between two currencies.
+    - scrape_currencies: Scrapes the Yahoo Finance currency page.
+    - scrape_world_indices: Scrapes the Yahoo Finance world indices page.
+    - scrape_crypto: Scrapes the Yahoo Finance crypto page.
+    - get_soup: Fetches HTML content from a given URL and creates a BeautifulSoup object.
+    """
+    
     def __init__(self):
         self.headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}
 
