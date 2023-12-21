@@ -2,21 +2,21 @@ import re
 
 
 def float_formatter(value) -> float | None:
+    """
+    Converts a string value into a float after cleaning non-numeric characters.
+
+    Args:
+    - value (str): The input string value that potentially contains numeric characters.
+
+    Returns:
+    - float or None: Returns the cleaned numeric value as a float if it exists, otherwise returns None.
+
+    Example:
+    >>> float_formatter("$1,234.56")
+    1234.56
+    >>> float_formatter("Not a numeric value")
+    None
+    """
     cleaned_price = re.sub(r'[^\d.]', '', value)
     return float(cleaned_price) if cleaned_price else None
 
-def display_dict(value: dict) -> str:
-    try:
-        output = ""
-        for key in value:
-            output += f"{key}\n"
-            
-            for k, v in value[key].items():
-                output += f"{k}: {v}\n"
-
-            output += "\n"
-
-        return output
-
-    except Exception as e:
-        print("ERROR occurred while trying to display dict: ", e)
